@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Clickaz App</title>
-  <%= stylesheet_link_tag :all %>
+  <title>Clicker Web Application</title>
+  <%= stylesheet_link_tag :application %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
 </head>
 <body class='<%= controller.controller_name %>'>
-<h1>Clickaz Web App</h1>
+<h1>Clicker Web Application</h1>
 
 <% if session[:user_id] %>
 	<p>Welcome, <%= User.find(session[:user_id]).name.capitalize %></p>
-	<%= button_to 'Logout', logout_path, method: :delete %>
+	<%= button_to 'Logout', logout_path, method: :delete, :class => "button" %>
 <% end %>
 
 <%= yield %>
