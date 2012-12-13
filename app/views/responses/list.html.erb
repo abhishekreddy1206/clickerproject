@@ -8,6 +8,7 @@
       <% @c = question.responses.where(answer: '3').count %>
       <% @d = question.responses.where(answer: '4').count %>
 
+	<% if !question.responses.empty? %>
   <div id= "chart<%= question.id %>" style="height:200px; width:600px; "></div>
 
   <script type="text/javascript">
@@ -66,6 +67,7 @@
         }
     });
 });
+	<% end %>
   </script>
    </strong>
 
